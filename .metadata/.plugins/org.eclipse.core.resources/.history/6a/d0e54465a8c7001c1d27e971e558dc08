@@ -1,0 +1,9 @@
+package com.tth.common.exceptions;
+
+public class IdNotFoundException extends RuntimeException {
+
+	public static void main(String[] args) {
+		newRecord
+	}
+
+}

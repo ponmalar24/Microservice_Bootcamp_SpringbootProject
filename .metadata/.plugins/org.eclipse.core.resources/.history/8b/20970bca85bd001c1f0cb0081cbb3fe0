@@ -1,0 +1,13 @@
+spring.jpa.show-sql=true
+spring.h2.console.enabled=true
+
+spring.datasource.url=jdbc:h2:mem:currencyconversionfactor
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+management.endpoints.web.exposure.include=*
+spring.jpa.defer-datasource-initialization=true
+# App Properties
+ibm.app.jwtSecret= bezKoderSecretKey
+ibm.app.jwtExpirationMs= 86400000

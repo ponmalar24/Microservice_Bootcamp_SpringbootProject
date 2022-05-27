@@ -1,0 +1,10 @@
+package com.tth.model;
+
+public class City {
+	String name;
+	double latitude;
+	double longitude;
+	String country;
+	double population;
+	Boolean is_capital;
+}

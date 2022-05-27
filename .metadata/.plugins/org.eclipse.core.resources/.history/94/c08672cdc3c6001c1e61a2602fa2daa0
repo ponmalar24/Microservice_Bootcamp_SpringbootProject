@@ -1,0 +1,5 @@
+package com.tth.repository;
+
+public class PopluationRepository {
+
+}

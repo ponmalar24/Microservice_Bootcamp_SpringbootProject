@@ -1,0 +1,38 @@
+package com.tth.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tth.model.Population;
+import com.tth.repository.PopulationRepository;
+
+@Service
+public class PopulationService {
+	
+@Autowired
+PopulationRepository populationRepo;
+	
+	public List<Population> getPopulationforAllCountry(){
+		return populationRepo.findAll();
+	}
+	
+	public Population getPopulationById(int id) {
+		return populationRepo.findById(id);
+	}
+	
+	public Population getPopulationBynae(String name) {
+		return populationRepo.findByname(name);
+	}
+
+	public Population addPopulationRecord(Population population) {
+		return populationRepo.saveAndFlush(population);
+	}
+	
+	public Population updatePopulationRecord(Population population) {
+		getPopulationById(population.getId());
+		return populationRepo.saveAndFlush(population);
+		
+	}
+}

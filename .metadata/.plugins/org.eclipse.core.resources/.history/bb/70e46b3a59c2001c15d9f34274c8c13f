@@ -1,0 +1,12 @@
+package com.ibm.repository;
+
+import java.util.List;
+
+import com.ibm.model.Cart;
+
+public interface CartRepository {
+	public List<Cart> findAll();
+	public Cart findById(int id);
+	public Cart findByProductname(String productname);
+
+}

@@ -1,0 +1,18 @@
+package com.tth.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ibm.model.Product;
+import com.tth.model.Population;
+
+
+
+public interface PopluationRepository extends JpaRepository<Population, Long> {
+	
+	public List<Population> findAll();
+	public Population findById(int id);
+	public void deleteById(int id);
+
+}

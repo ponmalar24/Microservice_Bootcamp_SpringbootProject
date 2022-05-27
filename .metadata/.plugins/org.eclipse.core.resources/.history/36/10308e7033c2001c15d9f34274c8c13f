@@ -1,0 +1,20 @@
+package com.ibm.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name="product")  
+public class product {
+	@Id
+	@NotNull
+	@Column(name="id") 
+	int id;
+	String product_name;
+	String quantity;
+	
+
+}

@@ -1,0 +1,117 @@
+package com.tth.controller;
+
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.json.*;  
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.tth.model.City;
+import com.tth.model.Population;
+import com.tth.service.PopulationService;
+
+@CrossOrigin
+@RestController
+@RequestMapping("/population")
+public class PopulationController {
+	
+	@Value("${populationurl}")
+	private String url;
+	
+	@Autowired
+	PopulationService populationService;
+
+	@Autowired
+	RestTemplate restTemplate;
+	
+	@GetMapping
+	public List<Population> getPoulationforAllCountry() {
+		return populationService.getPopulationforAllCountry();
+	}
+
+	@GetMapping("{id}")
+	public Population getConversionFactorById(@PathVariable int id) {
+		return populationService.getPopulationById(id);
+	}
+	
+	@GetMapping("/city/{city}")
+	public City[] getConversionFactorById(@PathVariable String city) {
+		
+		List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
+		MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
+		converter.setSupportedMediaTypes(Collections.singletonList(MediaType.APPLICATION_JSON));
+		messageConverters.add(converter);
+		restTemplate.setMessageConverters(messageConverters);
+		 
+		
+		  String uriVariables= city; 
+		  System.out.println("amount=>"+city);
+		  
+		  HttpHeaders headers = new HttpHeaders();
+		  headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+		  headers.setContentType(MediaType.APPLICATION_JSON);
+		  headers.add("x-api-key", "/WufMn0764cGBnpIGopEzw==hM63v5nN1KxTHWCu");
+		 // headers.set("X-Api-Key", "/WufMn0764cGBnpIGopEzw==hM63v5nN1KxTHWCu");
+
+		  HttpEntity<String> requestEntity = new HttpEntity<>(headers);
+		  
+			/*
+			 * Map<String, String> map = new HashMap<>(); map.put("name", city);
+			 */
+
+		  ResponseEntity<City> response = restTemplate.exchange(
+				  url+"?name="+city, HttpMethod.GET, requestEntity, City.class);
+		  
+		 // ResponseEntity<Population> responseEntity=restTemplate.getForEntity(url+city, Population.class, uriVariables);
+		  City[] response1=response.getBody();
+		  JSONParser jsonParser = new JSONParser();
+
+		 return response1;
+	}
+
+
+	@PostMapping
+	public Population addNewRecord(@RequestBody Population population) {
+		Population result = populationService.addPopulationRecord(population);
+		return result;
+
+	}
+	
+	@PutMapping("{id}")
+	public Population updateRecord(@PathVariable int id,
+			 @RequestBody Population population) {
+		Population result = populationService.updatePopulationRecord(population);
+		return result;
+	}
+	  
+	 
+}

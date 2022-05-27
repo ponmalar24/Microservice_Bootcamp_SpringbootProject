@@ -1,0 +1,6 @@
+insert into product(product_id,product_name,catagory,price)  
+values(1,'Phone',6,200);  
+insert into product(product_id,product_name,catagory,price)  
+values(2,'dress',75,400);  
+insert into product(product_id,product_name,catagory,price)  
+values(3,'toys',25,800);  

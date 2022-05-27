@@ -1,0 +1,5 @@
+package com.tth.common.exceptions;
+
+public class CityNotFoundException extends RuntimeException {
+
+}

@@ -1,0 +1,11 @@
+package com.tth.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.tth.model.Population;
+
+
+
+public interface PopluationRepository extends JpaRepository<Population, Long> {
+
+}

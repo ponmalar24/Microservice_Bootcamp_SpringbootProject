@@ -1,0 +1,6 @@
+package com.ibm.repository;
+
+@Repository
+public interface productRepository {
+
+}

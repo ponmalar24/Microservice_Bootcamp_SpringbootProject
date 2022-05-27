@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Order Success</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div class="container">
+        <h1>Thank you for your Order!!!</h1>
+        <p> Your order id is </p>
+
+    </div>
+</body>
+</html>

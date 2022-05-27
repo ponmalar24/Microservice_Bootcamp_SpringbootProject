@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf Application - Form User form - Inputs</title>
+</head>
+<body>
+    <title>User Form</title>
+    <style>
+   .container
+   {  
+      position: absolute;
+      top: 20%;
+      left: 35%;
+      width: 400px; 
+      background-color: rgb(179, 149, 179); 
+      border-color: black;
+      padding: 5px;
+    }
+    .CRUD-btns
+    {
+      width: 50px;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      width: 400px; 
+      padding: 5px;
+    }
+    </style>
+</head>
+<body>
+     
+    <div class="container">
+    <form action="population/user" method="POST">
+           <
+            <h1>User Form</h1>
+            <hr>
+            Name  :
+            <div class="form-group">
+                <input type="text"  th:field="*{name}" placeholder="Enter the Name">
+            </div>
+            City  :
+            <div class="form-group">
+                <input type="text" th:field="*{city}" placeholder="Enter the City">
+            </div>
+            
+            <button type="submit">Save User</button>
+                      
+        </form>
+</body>
+</html>

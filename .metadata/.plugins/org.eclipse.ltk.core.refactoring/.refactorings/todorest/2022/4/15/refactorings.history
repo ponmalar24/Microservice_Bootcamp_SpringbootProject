@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Dockerfile&apos; to &apos;currency_conversion_factor_microservice&apos;&#x0D;&#x0A;- Original project: &apos;todorest&apos;&#x0D;&#x0A;- Destination element: &apos;currency_conversion_factor_microservice&apos;&#x0D;&#x0A;- Original element: &apos;Dockerfile&apos;" description="Copy file" destination="=currency_conversion_factor_microservice" element1="Dockerfile" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1649258297748" units="0" version="1.0"/>
+</session>

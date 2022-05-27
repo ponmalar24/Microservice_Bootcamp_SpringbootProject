@@ -1,0 +1,27 @@
+package com.tth;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.tth.model.Population;
+import com.tth.service.PopulationService;
+
+@SpringBootApplication
+public class UserformApplication implements CommandLineRunner {
+	
+	@Autowired
+	PopulationService populationService;
+
+	public static void main(String[] args)  {
+		SpringApplication.run(UserformApplication.class, args);
+	}
+	
+	@Override
+	public void run(String... args) throws Exception {
+		populationService.addPopulationRecord(new Population("Anu","India",20L));
+		populationService.addPopulationRecord(new Population("saffd","US",30L));
+	}
+
+}

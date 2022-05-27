@@ -1,0 +1,16 @@
+package com.ibm.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.ibm.model.ConversionFactor;
+import com.ibm.model.product;
+
+@Repository
+public interface productRepository  extends JpaRepository<product, Integer> {
+	
+	public List<product> findAll();
+	public product findById(int id);
+}

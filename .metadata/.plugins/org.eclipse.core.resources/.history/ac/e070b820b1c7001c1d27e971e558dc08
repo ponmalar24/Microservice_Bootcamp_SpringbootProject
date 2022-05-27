@@ -1,0 +1,5 @@
+package com.tth.service;
+
+public class IdNotFoundException extends RuntimeException {
+
+}

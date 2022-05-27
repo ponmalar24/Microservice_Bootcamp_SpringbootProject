@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.remoteJavaApplication">
+    <booleanAttribute key="org.eclipse.jdt.launching.ALLOW_TERMINATE" value="true"/>
+    <mapAttribute key="org.eclipse.jdt.launching.CONNECT_MAP">
+        <mapEntry key="hostname" value="localhost"/>
+        <mapEntry key="port" value="62164"/>
+    </mapAttribute>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="currencyconversionfactor"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_CONNECTOR_ID" value="org.eclipse.jdt.launching.socketAttachConnector"/>
+    <stringAttribute key="sts.boot.dash.element.name" value="a549a750f2d7a7fdfff48f84aac75291c999117f8a750dd939292115f1333a3c"/>
+</launchConfiguration>

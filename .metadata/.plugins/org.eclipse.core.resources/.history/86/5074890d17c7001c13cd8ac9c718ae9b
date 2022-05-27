@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population</title>
+    <style>
+   .container
+   {  
+      position: absolute;
+      top: 20%;
+      left: 35%;
+      width: 400px; 
+      background-color: rgb(179, 149, 179); 
+      border-color: black;
+      padding: 5px;
+    }
+    .CRUD-btns
+    {
+      width: 50px;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      width: 400px; 
+      padding: 5px;
+    }
+    </style>
+</head>
+<body>
+     
+    <div class="container">
+        <form method="GET" action:"/city/{city}">
+           <
+            <h1>Population</h1>
+            <hr>
+            Name  :
+            <div class="form-group">
+                <input class="form-control" type="text" name="Name" placeholder="Enter the Name">
+            </div>
+            City  :
+            <div class="form-group">
+                <input class="form-control" type="text" name="City" placeholder="Enter the City">
+            </div>
+            Population
+            <div class="form-group">
+                <input class="form-control" type="text" name="Population" >
+            </div>
+            <br>
+            <div>
+                <input type="submit" >
+            </div>
+           <!-- https://youtu.be/3ODi1A4Oa4E -->
+        </form>
+       
+        <div class="CRUD-btns">
+
+        <form action="Create">
+           <button onclick="">Get Population</button>
+        </form><br>
+    
+</body>
+<script type="text/javascript" th:inline="javascript">
+    /<![CDATA[/
+
+    $(document).ready(function() {
+       var modelAttributeValue = [[${modelAttribute}]];
+    }
+
+    /]]>/
+</script>
+</html>

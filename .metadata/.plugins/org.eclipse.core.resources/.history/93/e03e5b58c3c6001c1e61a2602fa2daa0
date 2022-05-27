@@ -1,0 +1,50 @@
+package com.tth.model;
+
+public class Population {
+	
+	public Population() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Population(int id, String name, String city, Long population) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.city = city;
+		this.population = population;
+	}
+	int id;
+	String name;
+	String city;
+	Long population;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public Long getPopulation() {
+		return population;
+	}
+	public void setPopulation(Long population) {
+		this.population = population;
+	}
+	@Override
+	public String toString() {
+		return "Population [id=" + id + ", name=" + name + ", city=" + city + ", population=" + population + "]";
+	}
+
+}

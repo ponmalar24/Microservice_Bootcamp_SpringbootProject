@@ -1,0 +1,33 @@
+package com.tth.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.ibm.model.ConversionFactor;
+import com.tth.model.Population;
+import com.tth.repository.PopulationRepository;
+
+public class PopluationService {
+	
+@Autowired
+PopulationRepository populationRepo;
+	
+	public List<Population> getAllConversionFactor(){
+		return populationRepo.findAll();
+	}
+	
+	public Population getConversionFactorById(int id) {
+		return populationRepo.findById(id);
+	}
+
+	public Population addConversionFactor(Population population) {
+		return populationRepo.saveAndFlush(population);
+	}
+	
+	public Population updateConversionFactor(Population conversionFactor) {
+		getConversionFactorById(conversionFactor.getId());
+		return populationRepo.saveAndFlush(population);
+		
+	}
+}

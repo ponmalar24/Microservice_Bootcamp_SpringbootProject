@@ -1,0 +1,30 @@
+package com.ibm.controller;
+
+import java.net.URI;
+
+import javax.validation.Valid;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import com.ibm.model.Cart;
+
+public class CartController {
+	
+	
+	@PostMapping
+	public ResponseEntity<Cart> addConversionFactor(@Valid @RequestBody Cart cart)	
+	{
+		Card result = cartService.addProduct(card);
+		URI location = ServletUriComponentsBuilder
+		.fromCurrentRequest()
+		.path("/{id}")
+		.buildAndExpand(result.getId()).toUri();
+		return ResponseEntity.created(location)
+				.body(result);
+		
+	}
+
+}
